@@ -1,9 +1,61 @@
-// app/get-involved/page.tsx
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "../components/layout/Footer";
 
 export default function GetInvolvedPage() {
+  // Form state
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    role: "",
+    source: "",
+    contribute: "",
+  });
+
+  // Handle input changes
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      await fetch(
+        "/api", // replace with your deployed Google Apps Script URL
+        {
+          method: "POST",
+          mode: "no-cors", // Required for public Google Apps Script
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      alert("Thanks for joining Hued! Your response has been recorded.");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        role: "",
+        source: "",
+        contribute: "",
+      });
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Something went wrong. Please try again later.");
+    }
+  };
+
   return (
     <main className="bg-white text-[#111] flex flex-col min-h-screen">
       {/* Header */}
@@ -26,10 +78,10 @@ export default function GetInvolvedPage() {
         </nav>
       </header>
 
-      {/* Content: Split Screen */}
-      <div className="flex-grow flex flex-col">
-        {/* Top half: Image */}
-        <div className="w-full relative h-[135vh] overflow-hidden">
+      {/* Content */}
+      <div className="flex-grow flex flex-col font-['Euclid Circular B']">
+        {/* Top Half: Image + Text */}
+        <div className="relative w-[95%] mx-auto my-4 h-[90vh] sm:h-[100vh] md:h-[110vh] lg:h-[135vh] overflow-hidden rounded-lg">
           <Image
             src="/images/Frame_64.png"
             alt="Get Involved"
@@ -37,136 +89,121 @@ export default function GetInvolvedPage() {
             className="object-contain"
             priority
           />
+
+          {/* Top Text */}
+          <div className="absolute top-[10%] left-1/2 -translate-x-1/2 text-center text-[#444444] px-4 sm:px-6 md:px-8">
+            <h1
+              className="text-[5vw] sm:text-[4.5vw] md:text-[3.5vw] lg:text-[2.5vw] font-semibold drop-shadow-lg leading-tight
+              bg-gradient-to-r from-[#F27A5D] via-[#F9AA31] via-[#A587D1] to-[#6AB0E5] bg-clip-text text-transparent"
+            >
+              Interested in Joining Hued?
+            </h1>
+            <p className="text-[3vw] sm:text-[2.5vw] md:text-[2vw] lg:text-[1.5vw] mt-2 sm:mt-3 drop-shadow-md">
+              Are you a Stylist, Designer, or Fashion<br />
+              Tech Enthusiast? <br />
+            </p>
+          </div>
+
+          {/* Bottom Text */}
+          <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 text-center text-[#232323] px-4 sm:px-6 md:px-8 max-w-[80%] md:max-w-3xl">
+            <p className="text-[2.5vw] sm:text-[2vw] md:text-[1.5vw] lg:text-[1.25vw] leading-relaxed drop-shadow-md">
+              At Hued, we're building something meaningful, but we can't do it <br />
+              alone. We're looking for individuals who understand that fashion <br />
+              is more than just an aesthetic — it's a journey.
+            </p>
+          </div>
         </div>
 
-        {/* Bottom half: Form */}
-        <div className="w-full flex-1 flex items-center justify-center bg-gray-100 px-4 py-16">
-          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl w-full">
-            <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
-              Tell Us How You Can Contribute
+        {/* Bottom Half: Form */}
+        <div className="w-full flex-1 flex items-start justify-start bg-white px-8 py-16">
+          <div className="bg-white rounded-2xl p-10 w-3/4 md:w-3/4 lg:w-3/4">
+            <h2 className="text-2xl font-semibold text-[#F27A5D] mb-6 text-left">
+              Tell Us How You Can Contribute.
             </h2>
-            <p className="text-center text-gray-600 mb-6">
-              Use the form below to share your details and explain how you could make an impact at Hued.
+            <p className="text-left text-gray-600 mb-6">
+              Use the form below to share your details and explain how you could make <br />
+              an impact at Hued. <br />
             </p>
 
-            <form className="space-y-6">
-              {/* First Name */}
-              <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  required
-                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#2F80ED] focus:outline-none"
-                />
-              </div>
-
-              {/* Last Name */}
-              <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  required
-                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#2F80ED] focus:outline-none"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#2F80ED] focus:outline-none"
-                />
-              </div>
-
-              {/* Phone */}
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#2F80ED] focus:outline-none"
-                />
-              </div>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {["firstName", "lastName", "email", "phone", "source"].map((field) => (
+                <div key={field}>
+                  <label htmlFor={field} className="block text-sm font-medium text-gray-700">
+                    {field === "firstName"
+                      ? "First Name *"
+                      : field === "lastName"
+                      ? "Last Name *"
+                      : field === "email"
+                      ? "Email *"
+                      : field === "phone"
+                      ? "Phone Number (Optional)"
+                      : "How did you hear about Hued? (Optional)"}
+                  </label>
+                  <input
+                    type={field === "email" ? "email" : "text"}
+                    id={field}
+                    name={field}
+                    required={["firstName", "lastName", "email"].includes(field)}
+                    value={formData[field as keyof typeof formData]}
+                    onChange={handleChange}
+                    className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#2F80ED] focus:outline-none bg-white"
+                  />
+                </div>
+              ))}
 
               {/* Role */}
               <div>
                 <label htmlFor="role" className="block text-sm font-medium text-gray-700">
-                  Role
+                  Role <span className="text-red-500">*</span>
                 </label>
                 <select
                   id="role"
                   name="role"
-                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 bg-white focus:ring-2 focus:ring-[#2F80ED] focus:outline-none"
+                  value={formData.role}
+                  onChange={handleChange}
+                  required
+                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 bg-[#EFEFEF] focus:ring-2 focus:ring-[#2F80ED] focus:outline-none"
                 >
                   <option value="">Select your role</option>
-                  <option value="student">Student</option>
-                  <option value="professional">Professional</option>
-                  <option value="researcher">Researcher</option>
-                  <option value="volunteer">Volunteer</option>
-                  <option value="other">Other</option>
+                  <option value="Social Media">Social Media</option>
+                  <option value="Friend or Colleague">Friend or Colleague</option>
+                  <option value="Fashion Event">Fashion Event</option>
+                  <option value="Article or Publication">Article or Publication</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
 
-              {/* How did you hear */}
-              <div>
-                <label htmlFor="source" className="block text-sm font-medium text-gray-700">
-                  How did you hear about Hued?
-                </label>
-                <input
-                  type="text"
-                  id="source"
-                  name="source"
-                  placeholder="e.g., Friend, LinkedIn, Event..."
-                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#2F80ED] focus:outline-none"
-                />
-              </div>
-
-              {/* How can you contribute */}
+              {/* Contribution */}
               <div>
                 <label htmlFor="contribute" className="block text-sm font-medium text-gray-700">
-                  How can you contribute?
+                  How can you contribute? <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   id="contribute"
                   name="contribute"
-                  rows={4}
-                  placeholder="Tell us how you'd like to be involved..."
-                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#2F80ED] focus:outline-none"
+                  rows={8}
+                  required
+                  value={formData.contribute}
+                  onChange={handleChange}
+                  placeholder="Tell us about your skills, experience, and vision for the team..."
+                  className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-[#2F80ED] focus:outline-none bg-white"
                 ></textarea>
               </div>
 
-              {/* Submit button */}
-              <div className="flex justify-center">
+              <div className="flex flex-col items-start">
                 <button
                   type="submit"
-                  className="bg-[#2F80ED] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#2565c9] transition-all"
+                  className="bg-[#232323] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#444444] transition-all"
                 >
-                  Submit
+                  Join the Hued Team
                 </button>
+                <div className="h-16"></div>
               </div>
             </form>
           </div>
         </div>
       </div>
 
-      {/* Footer */}
       <Footer />
     </main>
   );
