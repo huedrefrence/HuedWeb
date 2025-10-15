@@ -1,6 +1,5 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",                 // ← required for paths to work
+  "compilerOptions": {              // ← required for paths to work
     "paths": { "@/*": ["./*"] },    // @ points at the web/ root
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
