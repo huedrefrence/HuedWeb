@@ -80,7 +80,7 @@ export default function MonthlyFeatures() {
             <li><Link href="/">Home</Link></li>
             <li><Link href="/knowledge-hub">Knowledge Hub</Link></li>
             <li><Link href="/luminaries">Luminaries</Link></li>
-            <li><Link href="/monthly-features/">Monthly Features</Link></li>
+            <li><Link href="/monthly-features/">Monthly Highlights</Link></li>
             <li><Link href="/get-involved">Get Involved</Link></li>
             <li><Link href="/community">Community Engagement</Link></li>
             <li><Link href="/beta">Hued Beta</Link></li>

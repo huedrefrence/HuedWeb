@@ -9,7 +9,7 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/knowledge-hub", label: "Knowledge Hub" },
   { href: "/luminaries", label: "Luminaries" },
-  { href: "/monthly-features", label: "Monthly Features" },
+  { href: "/monthly-features", label: "Monthly Highlights" },
   { href: "/get-involved", label: "Get Involved" },
   { href: "/community", label: "Community Engagement" },
   { href: "/beta", label: "Hued Beta" },
