@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
     const data = await req.json();
 
     await fetch(
-      "https://script.google.com/macros/s/AKfycbzFT9Q903yc4gcZP2lTxx1km-Lgm2fozTGwdwFiM8Ewz5xwP-I81ZhD1Km2XoR5rFNV/exec", // Google Apps Script web app
+      "https://script.google.com/macros/s/AKfycbxO55S5hkgngYSV5E8kBG-esiRpGdYcQgG041yIknvpJX9cC3BN7cHiYIikly-YkSKg/exec", // Google Apps Script web app
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
