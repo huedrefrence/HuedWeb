@@ -28,7 +28,7 @@ export default function Footer() {
           <li><Link href="/mission">Our Mission</Link></li>
           <li><Link href="/knowledge">Knowledge Hub</Link></li>
           <li><Link href="/luminaries">Luminaries</Link></li>
-          <li><Link href="/resources">Resources</Link></li>
+          <li><Link href="/monthly-features">Monthly Features</Link></li>
           <li><Link href="/involved">Get Involved</Link></li>
           <li><Link href="/community">Community Engagement</Link></li>
         </ul>
