@@ -323,7 +323,7 @@ export default function MonthlyFeatures() {
                     className="mb-1"
                   />
                 )}
-                {cat === "Fashion Enthusiastmonth" && (
+                {cat === "Fashion Enthusiast" && (
                   <div className="relative mb-1">
                     <User
                       size={24}
