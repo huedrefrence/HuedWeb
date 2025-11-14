@@ -16,8 +16,10 @@ export default function MissionPage() {
             <span className="sr-only">Hued</span>
           </Link>
 
-          <ul className="hidden md:flex gap-6 text-sm font-medium font-['Euclid Circular B']">
+          <ul className="hidden md:flex gap-6 text-sm font-medium font-['Euclid Circular B']
+            [&>li>a]:hover:text-[#2F80ED] [&>li>a]:transition-colors">
             <li><Link href="/">Home</Link></li>
+            <li><Link href="/mission" >Our Mission</Link></li>
             <li><Link href="/knowledge-hub">Knowledge Hub</Link></li>
             <li><Link href="/luminaries">Luminaries</Link></li>
             <li><Link href="/monthly-features">Monthly Highlights</Link></li>

@@ -15,12 +15,33 @@ type QA = {
 const qas: QA[] = [
   {
     id: 'q1',
-    question: 'What are the latest fashion trends for 2025?',
-    // Closed by default (in the Figma, only the third card is open at first)
+    question: 'What influences seasonal trends?',
+    defaultOpen: false,
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Several key factors influence seasonal trends: weather dictates fabric choices and how we
+          layer; culture shapes themes, colors, and narratives; and social media drives real-time visibility
+          and virality. Innovation also plays a major role, with new textiles, production techniques, and
+          design ideas pushing fashion forward. Always remember, trends are cyclical. What’s hot today
+          may fade, but it often returns in a reimagined form. Fashion constantly reinvents itself.
+        </p>
+      </div>
+    ),    
   },
   {
     id: 'q2',
-    question: 'What are the best sustainable fashion brands?',
+    question: 'How can I find or define my personal fashion style?',
+    defaultOpen: false,
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Try exploring mood boards, reviewing your favorite outfits, and analyzing what makes you
+feel confident. Don’t be afraid to experiment with colors, fits, and accessories until you find what
+truly resonates.
+        </p>
+      </div>
+    ),   
   },
   {
     id: 'q3',
@@ -64,12 +85,144 @@ const qas: QA[] = [
   },
   {
     id: 'q4',
-    question: 'What are the best fashion hacks or styling tips?',
+    question: 'What are the essential wardrobe basics everyone should own?',
+    defaultOpen: false,
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Timeless basics include a white shirt, tailored blazer, classic cut jeans, neutral sweater, loafers
+or sneakers. Build on these pieces for versatility.
+        </p>
+      </div>
+    ),   
   },
   {
     id: 'q5',
-    question: 'What are the fashion trends for plus-size individuals?',
+    question: 'How do I build a capsule wardrobe that fits my lifestyle?',
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Choose a limited number of high-quality, easy-to-mix staples in your preferred palette and
+silhouette. Update occasionally with one or two trendy accents to keep things fresh.
+        </p>
+      </div>
+    ),
   },
+  {
+    id: 'q6',
+    question: 'How do I combine comfort with style in my wardrobe?',
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Prioritize soft, breathable fabrics and flexible fits, think loose trousers, knitwear, and relaxed
+tailoring combined with a standout accessory.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: 'q7',
+    question: 'How can I mix classic and trendy pieces effectively?',
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Pair one trendy item (like a bold accessory or statement denim) with classic basics to keep
+your look both current and timeless.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: 'q8',
+    question: 'What does sustainable fashion really mean today?',
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Sustainable fashion means designing, producing, and consuming clothing in ways that
+minimize environmental impact, prioritize fair labor, and maximize longevity over fast
+disposability.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: 'q9',
+    question: 'How can I recognize brands that are truly eco-friendly and not greenwashing?',
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Look for transparency in material sourcing, fair trade certifications, carbon offset initiatives,
+and the absence of misleading environmental claims on brand sites.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: 'q14',
+    question: 'What are simple ways to make my wardrobe more sustainable?',
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Buy fewer, higher-quality items, opt for timeless designs, thrift, recycle, and support brands
+prioritizing eco-friendly practices.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: 'q10',
+    question: 'How can I style one piece in multiple ways?',
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Use layering, accessories, and footwear to transform a staple (ex: shift a blazer from office to
+evening with jewelry or a statement top).
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: 'q11',
+    question: 'What are the best fashion hacks for a polished look?',
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Invest in tailoring, use double-sided tape for fit fixes, plan outfits by occasion in advance, and
+accessorize smartly with scarves and belts.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: 'q12',
+    question: 'How do I choose the right colors and fits for my body type?',
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Experiment with different shades and silhouettes to find what best complements your shape
+and skin tone. Don’t hesitate to use online guides or consult trusted stylists for direction. Try
+various fits depending on your mood or the aesthetic. Confidence isn’t just about what fits well,
+but also about how your aesthetic reflects how you want to feel and be perceived.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: 'q13',
+    question: 'What are some timeless fashion rules everyone should know?',
+    content: (
+      <div className="space-y-4 text-[#2B2B2B]">
+        <p>
+          Fit + utility always comes first: even the most stylish piece won&#39;t work if it doesn&#39;t fit well.
+Prioritize quality over quantity: buy fewer items, but make sure each one truly adds value to your
+wardrobe. Before purchasing something, ask yourself not just if it looks good, but whether it
+complements what you already own. Choose versatile pieces that can be styled in multiple ways
+to maximize their utility.
+        </p>
+      </div>
+    ),
+  },
+  
 ];
 
 export default function ResourcesPage() {
@@ -85,23 +238,35 @@ export default function ResourcesPage() {
 
   return (
     <main className="bg-white text-[#111]">
-      {/* HEADER (kept lightweight; see snippet in section 2 to reuse your main header) */}
-      <header className="mx-auto max-w-6xl px-4 py-5 flex items-center gap-6">
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/images/logo.webp" alt="Hued" width={36} height={36} priority />
-          <span className="sr-only">Hued</span>
-        </Link>
+      <header className="w-full bg-white border-b border-black/10">
+  <nav className="mx-auto max-w-[1400px] flex items-center px-10 py-5 gap-50">
 
-        <nav className="ml-auto hidden md:flex items-center gap-7 font-['Euclid Circular B']">
-          <Link href="/" className="hover:opacity-70">Home</Link>
-          <Link href="/knowledge-hub" className="hover:opacity-70">Knowledge Hub</Link>
-          <Link href="/luminaries" className="hover:opacity-70">Luminaries</Link>
-          <Link href="/resources" className="text-[#2F80ED]">Resources</Link>
-          <Link href="/get-involved" className="hover:opacity-70">Get Involved</Link>
-          <Link href="/community" className="hover:opacity-70">Community Engagement</Link>
-          <Link href="/beta" className="hover:opacity-70">Hued Beta</Link>
-        </nav>
-      </header>
+    {/* Logo */}
+    <Link href="/" className="flex items-center">
+      <Image
+        src="/images/logo.webp"
+        alt="Hued Logo"
+        width={40}
+        height={40}
+        priority
+      />
+    </Link>
+
+    {/* Nav Links */}
+    <div className="flex items-center gap-8 text-black font-[Euclid Circular B] text-[15px]">
+      <Link href="/" className="hover:text-[#2F80ED]">Home</Link>
+      <Link href="/mission" className="hover:text-[#2F80ED]">Our Mission</Link>
+      <Link href="/knowledge-hub" className="hover:text-[#2F80ED]">Knowledge Hub</Link>
+      <Link href="/luminaries" className="hover:text-[#2F80ED]">Luminaries</Link>
+      <Link href="/faq" className="hover:text-[#2F80ED]">FAQ</Link>
+      <Link href="/monthly-highlights" className="hover:text-[#2F80ED]">Monthly Highlights</Link>
+      <Link href="/get-involved" className="hover:text-[#2F80ED]">Get Involved</Link>
+      <Link href="/community" className="hover:text-[#2F80ED]">Community Engagement</Link>
+      <Link href="/beta" className="hover:text-[#2F80ED]">Hued Beta</Link>
+    </div>
+
+  </nav>
+</header>
 
       {/* PAGE BODY */}
       <section className="mx-auto max-w-[1200px] px-6 pt-[120px] pb-12 md:pt-[140px] md:pb-16">
@@ -132,7 +297,7 @@ export default function ResourcesPage() {
     alt="Woman sitting on a couch"
     width={280}
     height={260}
-    className="block h-auto w-full mb-[-35px]"
+    className="block h-auto w-full mb-[-35px] mt-100"
     priority
   />
 

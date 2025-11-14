@@ -1,0 +1,29 @@
+[
+  {
+    "id": "demo-1",
+    "type": "video",
+    "title": "Fashion Essentials You Need in Your Closet",
+    "creator": "Upcycle Master",
+    "creator_title": "DIY Specialist",
+    "date": "2025-05-16",
+    "tags": ["Assessing Fashion Needs", "Tutorial", "DIY", "Upcycling"],
+    "cover": "https://placehold.co/800x500/png?text=Fashion%20Essentials",
+    "duration": "01:20",
+    "description": "Learn professional techniques for transforming outdated garments into fashionable pieces. This step-by-step tutorial demonstrates creative upcycling methods…",
+    "url": "https://example.com/video/1",
+    "platform": "tiktok"
+  },
+  {
+    "id": "demo-2",
+    "type": "article",
+    "title": "How to Assess Your Fashion Needs",
+    "creator": "Upcycle Master",
+    "creator_title": "DIY Specialist",
+    "date": "2025-05-18",
+    "tags": ["Assessing Fashion Needs", "Textile", "DIY"],
+    "cover": "https://placehold.co/800x500/png?text=Assess%20Your%20Needs",
+    "description": "Evaluate your wardrobe, identify gaps, and determine your true fashion needs with a simple framework you can apply today.",
+    "url": "https://example.com/article/4",
+    "platform": "substack"
+  }
+]

@@ -7,14 +7,14 @@ import { useState } from "react";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/mission", label: "Our Mission" },
   { href: "/knowledge-hub", label: "Knowledge Hub" },
-  { href: "/luminaries", label: "Luminaries" },
-  { href: "/monthly-features", label: "Monthly Highlights" },
+  { href: "/luminaries", label: "Luminaries" }, 
+  { href: "/faq", label: "FAQ" },
+  { href: "/monthly-highlights", label: "Monthly Highlights" },
   { href: "/get-involved", label: "Get Involved" },
   { href: "/community", label: "Community Engagement" },
   { href: "/beta", label: "Hued Beta" },
-  { href: "/mission", label: "Our Mission" }, 
-  
 ];
 
 
@@ -22,62 +22,54 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const baseItem =
-    "block rounded-md px-3 py-2 transition-colors font-[Euclid Circular B]";
-  const activeItem = "text-[#2F80ED]"; // active color like your designs
-  const inactiveItem = "text-[#111827] hover:bg-black/5";
-
   return (
-    <header className="sticky top-0 z-50 bg-white text-[#111827] border-b border-black/5">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+    <header className="sticky top-0 z-50 bg-[#232323] text-white border-b border-[#2F80ED]">
+      <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-8 py-4">
+
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/logo.webp"
             alt="Hued logo"
-            width={32}
-            height={32}
+            width={36}
+            height={36}
             priority
           />
           <span className="sr-only">Hued</span>
         </Link>
 
-        {/* Mobile toggle */}
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden rounded px-3 py-2 ring-1 ring-black/10"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="main-nav"
+          className="md:hidden rounded px-3 py-2 ring-1 ring-white/20"
+          onClick={() => setOpen(!open)}
         >
           Menu
         </button>
 
-        {/* Links */}
+        {/* Desktop Links */}
         <ul
           id="main-nav"
-          className={`${open ? "block" : "hidden"} md:flex gap-6 text-sm`}
+          className={`${open ? "block" : "hidden"} md:flex items-center gap-10 text-[15px] font-['Euclid Circular B']`}
         >
-          {links.map((l) => {
-            // consider a link active if pathname === href or starts with it
+          {links.map(({ href, label }) => {
             const isActive =
-              pathname === l.href ||
-              (l.href !== "/" && pathname.startsWith(l.href));
+              pathname === href || (href !== "/" && pathname.startsWith(href));
 
             return (
-              <li key={l.href}>
+              <li key={href}>
                 <Link
-                  href={l.href}
-                  aria-current={isActive ? "page" : undefined}
-                  className={`${baseItem} ${
-                    isActive ? activeItem : inactiveItem
+                  href={href}
+                  className={`transition-colors ${
+                    isActive ? "text-[#2F80ED]" : "text-white hover:opacity-75"
                   }`}
                 >
-                  {l.label}
+                  {label}
                 </Link>
               </li>
             );
           })}
         </ul>
+
       </nav>
     </header>
   );
