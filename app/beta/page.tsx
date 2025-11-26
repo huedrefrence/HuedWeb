@@ -4,18 +4,6 @@ import React from "react";
 
 export default function BlogPage() {
  
-  const topics: string[] = [
-    "/images/Frame1.png",
-    "/images/Frame2.png",
-    "/images/Frame3.png",
-    "/images/Frame4.png",
-    "/images/Frame5.png",
-    "/images/Frame6.png",
-    "/images/Frame7.png",
-    "/images/Frame8.png",
-    "/images/Frame9.png",
-  ];
-
   return (
     <>
     <section className="relative isolate overflow-hidden bg-gradient-to-b from-white via-white to-[#FFF6EF] min-h-screen flex flex-col items-center justify-center">
