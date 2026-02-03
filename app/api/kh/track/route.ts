@@ -19,6 +19,7 @@ type TrackBody = {
   session_id: string;
   event_type: string;
 
+  source?: string | null;
   category?: string | null;
   topic?: string | null;
 
@@ -80,6 +81,8 @@ export async function POST(req: Request) {
     // ✅ category/topic: never null in DB (use UNKNOWN fallback)
     const category = toTrimmedStringOrNull(body?.category) ?? toTrimmedStringOrNull(body?.topic) ?? "UNKNOWN";
     const topic = toTrimmedStringOrNull(body?.topic) ?? toTrimmedStringOrNull(body?.category) ?? "UNKNOWN";
+    const source = toTrimmedStringOrNull(body?.source); 
+
 
     // ✅ content_id must be TEXT (string) — do NOT parse to int
     const contentId = toTrimmedStringOrNull(body?.content_id);
@@ -110,12 +113,12 @@ export async function POST(req: Request) {
     const r = await pool.query(
       `
       INSERT INTO content_interactions
-        (session_id, user_id, event_type, content_id, category_id, category, topic, upvoted, duration_seconds)
-      VALUES
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+(session_id, user_id, event_type, content_id, category_id, category, topic, source, upvoted, duration_seconds)
+VALUES
+($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
       RETURNING id, created_at
       `,
-      [sessionId, userId, eventType.trim(), contentId, categoryId, category, topic, upvoted, durationSeconds]
+      [sessionId, userId, eventType.trim(), contentId, categoryId, category, topic, source, upvoted, durationSeconds]
     );
 
     return NextResponse.json({

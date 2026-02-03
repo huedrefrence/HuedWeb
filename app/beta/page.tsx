@@ -48,7 +48,7 @@ export default function BlogPage() {
 </p>
 
 
-        {/* Search bar */}
+        {/* Search bar
         <div className="mt-8 max-w-xl mx-auto">
           <div className="relative">
             <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
@@ -74,17 +74,17 @@ export default function BlogPage() {
               className="w-full rounded-full bg-gray-100 pl-12 pr-4 py-4 text-sm text-gray-700 outline-none ring-1 ring-transparent focus:ring-gray-300"
             />
           </div>
-        </div>
+        </div> */}
 
         {/* CTA */}
-        <div className="mt-6">
+        {/* <div className="mt-6">
           <Link
             href="/community"
             className="inline-block rounded-xl bg-[#F27A5D] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:opacity-95"
           >
             Join the Community
           </Link>
-        </div>
+        </div> */}
       </div>
 
       {/* ILLUSTRATION BOTTOM RIGHT */}

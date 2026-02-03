@@ -273,7 +273,6 @@ function Header() {
     { name: "Home", href: "/" },
     { name: "Our Mission", href: "/mission" },
     { name: "Knowledge Hub", href: "/knowledge-hub" },
-    { name: "Luminaries", href: "/luminaries" },
     { name: "FAQ", href: "/resources" },
     { name: "Monthly Highlights", href: "/highlights" },
     { name: "Get Involved", href: "/get-involved" },
@@ -498,6 +497,7 @@ track({
   content_id: item.id,
   category: cat,
   topic: cat,
+  
   upvoted: nextVoted,
 });
   };
@@ -1075,11 +1075,6 @@ export default function KnowledgeHubPage() {
                   <li>
                     <Link href="/knowledge-hub" className="hover:text-white/90">
                       Knowledge Hub
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/luminaries" className="hover:text-white/90">
-                      Luminaries
                     </Link>
                   </li>
                   <li>

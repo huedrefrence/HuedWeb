@@ -137,7 +137,6 @@ export default function MissionPage() {
             <span className="block">At Hued, our core mission is to</span>
             <span className="block">elevate fashion knowledge and</span>
             <span className="block">awareness by fostering a dynamic</span>
-            <span className="block">peer-to-peer exchange of insights,</span>
             <span className="block">trends, and expertise.</span>
           </p>
 
@@ -147,6 +146,7 @@ export default function MissionPage() {
           <p>
             <span className="block">We believe that fashion is more</span>
             <span className="block">than just style-it’s a powerful form</span>
+            <span className="block">peer-to-peer exchange of insights,</span>
             <span className="block">of self-expression, culture, and</span>
             <span className="block">innovation.</span>
           </p>

@@ -2,19 +2,10 @@
 import Link from "next/link";
 
 const cards = [
-  {
-    title: "Meet Our Fashion Luminaries",
-    body:
-      "Connect with industry leaders, emerging designers, and fashion visionaries who are shaping the future of style and innovation.",
-    href: "/luminaries",
-    headerBg: "bg-[#2F7DE1]",
-    cta: "Meet the Experts →",
-  },
-  {
+    {
     title: "Our Mission",
     body:
       "Learn about our commitment to democratizing fashion knowledge and building an inclusive community where everyone can learn and grow.",
-    href: "/our-mission",
     headerBg: "bg-[#E9724C]",
     cta: "Discover More →",
   },
@@ -22,7 +13,6 @@ const cards = [
     title: "See Monthly Highlights",
     body:
       "Stay updated with our curated monthly editions featuring trending topics, expert interviews, and community spotlights.",
-    href: "/highlights",
     headerBg: "bg-[#2FBF9B]",
     cta: "View Highlights →",
   },
@@ -53,37 +43,42 @@ export default function FeatureCards() {
 
 
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {cards.map((c) => (
-            <article
-              key={c.title}
-              className="group overflow-hidden rounded-[20px] bg-[#FFF6EF] shadow-md ring-1 ring-black/5
-                         transition hover:-translate-y-0.5 hover:shadow-lg"
+        <section className="w-full py-16">
+      {/* OUTER WRAPPER – centers everything */}
+      <div className="flex justify-center">
+        {/* GRID – controls spacing & columns */}
+        <div className="grid gap-8 md:grid-cols-2">
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              role="button"
+              tabIndex={0}
+              className="block w-[320px] rounded-xl overflow-hidden border border-gray-200 shadow-md transition hover:shadow-lg"
             >
-              {/* colored header */}
+              {/* HEADER */}
               <div
-                className={`${c.headerBg} px-6 py-4 text-white`}
-                style={{ borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
+                className={`${card.headerBg} px-6 py-4 text-white font-semibold`}
               >
-                <h3 className="text-[18px] font-semibold leading-tight">
-                  {c.title}
-                </h3>
+                {card.title}
               </div>
 
-              {/* body */}
-              <div className="space-y-4 px-6 py-6">
-                <p className="text-[15px] leading-7 text-[#444444]">{c.body}</p>
-                <Link
-                  href={c.href}
-                  className="inline-flex items-center text-[15px] font-semibold text-[#444444] underline-offset-4 hover:underline"
-                >
-                  {c.cta}
-                </Link>
+              {/* BODY */}
+              <div className="px-6 py-5 bg-white">
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  {card.body}
+                </p>
+
+                <span className="mt-4 inline-block text-sm font-semibold text-[#0E6FFF]">
+                  {card.cta}
+                </span>
               </div>
-            </article>
+            </div>
           ))}
         </div>
       </div>
     </section>
+  
+  </div>
+  </section>
   );
 }
