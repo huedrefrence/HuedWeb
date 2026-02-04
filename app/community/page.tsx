@@ -16,7 +16,6 @@ export default function CommunityPage() {
           <ul className="hidden md:flex gap-6 text-sm font-medium font-['Euclid Circular B']">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/knowledge-hub">Knowledge Hub</Link></li>
-            <li><Link href="/luminaries">Luminaries</Link></li>
             <li><Link href="/monthly-features">Monthly Highlights</Link></li>
             <li><Link href="/get-involved">Get Involved</Link></li>
             <li><Link href="/community" className="text-[#2F80ED]">Community Engagement</Link></li>

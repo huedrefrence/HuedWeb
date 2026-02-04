@@ -68,7 +68,6 @@ export default function GetInvolvedPage() {
           <ul className="hidden md:flex gap-6 text-sm font-medium font-['Euclid Circular B']">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/knowledge-hub">Knowledge Hub</Link></li>
-            <li><Link href="/luminaries">Luminaries</Link></li>
             <li><Link href="/monthly-features">Monthly Highlights</Link></li>
             <li><Link href="/get-involved" className="text-[#2F80ED]">Get Involved</Link></li>
             <li><Link href="/community">Community Engagement</Link></li>
@@ -107,9 +106,9 @@ export default function GetInvolvedPage() {
           {/* Bottom Text */}
           <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 text-center text-[#232323] px-4 sm:px-6 md:px-8 max-w-[80%] md:max-w-3xl">
             <p className="text-[2.5vw] sm:text-[2vw] md:text-[1.5vw] lg:text-[1.25vw] leading-relaxed drop-shadow-md">
-              At Hued, we're building something meaningful, but we can't do it <br />
-              alone. We're looking for individuals who understand that fashion <br />
-              is more than just an aesthetic — it's a journey.
+              At Hued, we&apos;re building something meaningful, but we can&apos;t do it <br />
+              alone. We&apos;re looking for individuals who understand that fashion <br />
+              is more than just an aesthetic — it&apos;s a journey.
             </p>
           </div>
         </div>

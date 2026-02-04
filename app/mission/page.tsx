@@ -21,7 +21,6 @@ export default function MissionPage() {
             <li><Link href="/">Home</Link></li>
             <li><Link href="/mission" >Our Mission</Link></li>
             <li><Link href="/knowledge-hub">Knowledge Hub</Link></li>
-            <li><Link href="/luminaries">Luminaries</Link></li>
             <li><Link href="/monthly-features">Monthly Highlights</Link></li>
             <li><Link href="/get-involved">Get Involved</Link></li>
             <li><Link href="/community">Community Engagement</Link></li>
@@ -360,7 +359,6 @@ export default function MissionPage() {
             <li>Home</li>
             <li>Our Mission</li>
             <li>Knowledge Hub</li>
-            <li>Luminaries</li>
             <li>Resources</li>
             <li>Get Involved</li>
             <li>Community Engagement</li>

@@ -23,7 +23,17 @@ export async function POST(req: NextRequest) {
         raw: text,
       });
     }
-  } catch (err: any) {
-    return NextResponse.json({ status: "error", message: err.message });
-  }
+  } catch (err: unknown) {
+  const message =
+    err instanceof Error
+      ? err.message
+      : typeof err === "string"
+      ? err
+      : "Unknown error";
+
+  return NextResponse.json(
+    { status: "error", message },
+    { status: 500 }
+  );
+}
 }
