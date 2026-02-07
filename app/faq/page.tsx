@@ -258,7 +258,7 @@ export default function ResourcesPage() {
       <Link href="/mission" className="hover:text-[#2F80ED]">Our Mission</Link>
       <Link href="/knowledge-hub" className="hover:text-[#2F80ED]">Knowledge Hub</Link>
       <Link href="/faq" className="hover:text-[#2F80ED]">FAQ</Link>
-      <Link href="/monthly-features" className="hover:text-[#2F80ED]">Monthly Highlights</Link>
+      <Link href="/monthly-highlights" className="hover:text-[#2F80ED]">Monthly Highlights</Link>
       <Link href="/get-involved" className="hover:text-[#2F80ED]">Get Involved</Link>
       <Link href="/community" className="hover:text-[#2F80ED]">Community Engagement</Link>
       <Link href="/beta" className="hover:text-[#2F80ED]">Hued Beta</Link>
@@ -381,7 +381,7 @@ export default function ResourcesPage() {
                 <li><Link href="/" className="hover:opacity-80">Home</Link></li>
                 <li><Link href="/mission" className="hover:opacity-80">Our Mission</Link></li>
                 <li><Link href="/knowledge-hub" className="hover:opacity-80">Knowledge Hub</Link></li>
-                <li><Link href="/resources" className="hover:opacity-80">Resources</Link></li>
+                <li><Link href="/faq" className="hover:opacity-80">Resources</Link></li>
                 <li><Link href="/get-involved" className="hover:opacity-80">Get Involved</Link></li>
                 <li><Link href="/community" className="hover:opacity-80">Community Engagement</Link></li>
               </ul>

@@ -273,8 +273,8 @@ function Header() {
     { name: "Home", href: "/" },
     { name: "Our Mission", href: "/mission" },
     { name: "Knowledge Hub", href: "/knowledge-hub" },
-    { name: "FAQ", href: "/resources" },
-    { name: "Monthly Highlights", href: "/monthly-features" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Monthly Highlights", href: "/monthly-highlights" },
     { name: "Get Involved", href: "/get-involved" },
     { name: "Community Engagement", href: "/community" },
     { name: "Hued Beta", href: "/beta" },
@@ -1083,7 +1083,7 @@ export default function KnowledgeHubPage() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/monthly-features" className="hover:text-white/90">
+                    <Link href="/monthly-highlights" className="hover:text-white/90">
                       Monthly Highlights
                     </Link>
                   </li>

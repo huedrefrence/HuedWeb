@@ -68,7 +68,7 @@ export default function GetInvolvedPage() {
           <ul className="hidden md:flex gap-6 text-sm font-medium font-['Euclid Circular B']">
             <li><Link href="/">Home</Link></li>
             <li><Link href="/knowledge-hub">Knowledge Hub</Link></li>
-            <li><Link href="/monthly-features">Monthly Highlights</Link></li>
+            <li><Link href="/monthly-highlights">Monthly Highlights</Link></li>
             <li><Link href="/get-involved" className="text-[#2F80ED]">Get Involved</Link></li>
             <li><Link href="/community">Community Engagement</Link></li>
             <li><Link href="/beta">Hued Beta</Link></li>

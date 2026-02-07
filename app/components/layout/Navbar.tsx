@@ -10,7 +10,7 @@ const links = [
   { href: "/mission", label: "Our Mission" },
   { href: "/knowledge-hub", label: "Knowledge Hub" },
   { href: "/faq", label: "FAQ" },
-  { href: "/monthly-features", label: "Monthly Highlights" },
+  { href: "/monthly-highlights", label: "Monthly Highlights" },
   { href: "/get-involved", label: "Get Involved" },
   { href: "/community", label: "Community Engagement" },
   { href: "/beta", label: "Hued Beta" },

@@ -199,7 +199,7 @@ export default function BlogPage() {
           <li><Link href="/">Home</Link></li>
           <li><Link href="/mission">Our Mission</Link></li>
           <li><Link href="/knowledge">Knowledge Hub</Link></li>
-          <li><Link href="/monthly-features">Monthly Highlights</Link></li>
+          <li><Link href="/monthly-highlights">Monthly Highlights</Link></li>
           <li><Link href="/involved">Get Involved</Link></li>
           <li><Link href="/engagement">Community Engagement</Link></li>
         </ul>
