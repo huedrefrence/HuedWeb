@@ -1,13 +1,16 @@
 import fs from "fs";
 import crypto from "crypto";
 import * as XLSX from "xlsx";
+import path from "path";
 
 export const runtime = "nodejs";
 
-// ✅ CHANGE ONLY THIS PATH IF FILE MOVES AGAIN
-const DATA_PATH =
-  process.env.KH_LOCAL_CSV_PATH || "C:/kh-data/fashiondata.xlsx";
-
+const DATA_PATH = path.join(
+  process.cwd(),
+  "public",
+  "data",
+  "fashiondata.xlsx"
+);
 type RawRow = Record<string, unknown>;
 
 function stableId(url = "", category = ""): string {
