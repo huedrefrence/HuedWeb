@@ -10,7 +10,7 @@ export default function CommunityPage() {
       <header className="bg-white border-b border-black/5">
         <nav className="mx-auto max-w-6xl flex items-center justify-between px-4 py-4">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/logo.webp" alt="Hued" width={36} height={36} priority />
+            <Image src="/images/logo.png" alt="Hued" width={36} height={36} priority />
             <span className="sr-only">Hued</span>
           </Link>
           <ul className="hidden md:flex gap-6 text-sm font-medium font-['Euclid Circular B']">

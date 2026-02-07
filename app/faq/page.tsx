@@ -244,7 +244,7 @@ export default function ResourcesPage() {
     {/* Logo */}
     <Link href="/" className="flex items-center">
       <Image
-        src="/images/logo.webp"
+        src="/images/logo.png"
         alt="Hued Logo"
         width={40}
         height={40}
@@ -362,7 +362,7 @@ export default function ResourcesPage() {
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3">
-                <Image src="/images/logo.webp" alt="Hued" width={36} height={36} />
+                <Image src="/images/logo.png" alt="Hued" width={36} height={36} />
                 <span className="font-['Euclid Circular B'] text-white text-[28px] font-semibold">
                   Hued
                 </span>

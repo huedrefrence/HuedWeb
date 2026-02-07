@@ -12,7 +12,7 @@ export default function MissionPage() {
       <header className="bg-white">
         <nav className="mx-auto max-w-6xl flex items-center justify-between px-4 py-4">
           <Link href="/" className="flex items-center gap-2">
-            <Image src="/images/logo.webp" alt="Hued" width={36} height={36} priority />
+            <Image src="/images/logo.png" alt="Hued" width={36} height={36} priority />
             <span className="sr-only">Hued</span>
           </Link>
 
@@ -334,7 +334,7 @@ export default function MissionPage() {
       <div className="flex flex-col items-start space-y-3">
         <div className="flex items-center space-x-3">
           <Image
-            src="/images/logo.webp"
+            src="/images/logo.png"
             alt="Hued Logo"
             width={36}
             height={36}

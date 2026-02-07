@@ -18,7 +18,7 @@ export default function VersusPage() {
         <div className="mx-auto max-w-6xl flex items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/images/logo.webp"
+              src="/images/logo.png"
               alt="Hued"
               width={36}
               height={36}

@@ -10,7 +10,7 @@ export default function BlogPage() {
       {/* HEADER */}
       <div className="absolute top-6 left-6 flex items-center gap-2">
         <Image
-          src="/images/logo.webp"
+          src="/images/logo.png"
           alt="Hued"
           width={36}
           height={36}
@@ -176,7 +176,7 @@ export default function BlogPage() {
     <div className="mb-8 md:mb-0">
       <div className="flex items-center gap-2">
         <Image
-          src="/images/logo.webp"
+          src="/images/logo.png"
           alt="Hued Logo"
           width={36}
           height={36}

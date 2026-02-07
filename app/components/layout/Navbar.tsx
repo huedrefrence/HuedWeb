@@ -10,7 +10,7 @@ const links = [
   { href: "/mission", label: "Our Mission" },
   { href: "/knowledge-hub", label: "Knowledge Hub" },
   { href: "/faq", label: "FAQ" },
-  { href: "/monthly-highlights", label: "Monthly Highlights" },
+  { href: "/monthly-features", label: "Monthly Highlights" },
   { href: "/get-involved", label: "Get Involved" },
   { href: "/community", label: "Community Engagement" },
   { href: "/beta", label: "Hued Beta" },
@@ -28,7 +28,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/logo.webp"
+            src="/images/logo.png"
             alt="Hued logo"
             width={36}
             height={36}

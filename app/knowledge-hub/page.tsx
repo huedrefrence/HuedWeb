@@ -284,7 +284,7 @@ function Header() {
     <header className="bg-white text-neutral-900 border-b border-black/10">
       <div className="mx-auto max-w-[1300px] flex items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/logo.webp" alt="Hued Logo" width={36} height={36} priority />
+          <Image src="/images/logo.png" alt="Hued Logo" width={36} height={36} priority />
           <span className="sr-only">Hued</span>
         </Link>
 
@@ -1052,7 +1052,7 @@ export default function KnowledgeHubPage() {
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
             <div className="flex flex-col max-w-sm">
               <div className="flex items-center gap-3">
-                <Image src="/images/logo.webp" alt="Hued" width={36} height={36} priority />
+                <Image src="/images/logo.png" alt="Hued" width={36} height={36} priority />
                 <span className="text-[28px] font-semibold leading-none">Hued</span>
               </div>
               <p className="mt-6 text-[14px] text-white/80">“Inspiring Fashion Knowledge”</p>

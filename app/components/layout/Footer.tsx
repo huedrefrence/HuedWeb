@@ -8,7 +8,7 @@ export default function Footer() {
     {/* Left: logo */}
     <div className="space-y-2">
       <div className="flex items-center gap-2">
-        <Image src="/images/logo.webp" alt="Hued logo" width={40} height={40} priority />
+        <Image src="/images/logo.png" alt="Hued logo" width={40} height={40} priority />
         <span className="text-white font-semibold text-lg">Hued</span>
       </div>
       <p className="text-[13px] leading-6 text-white/70">
