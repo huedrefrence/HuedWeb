@@ -356,12 +356,12 @@ export default function MissionPage() {
             Quick Links
           </h4>
           <ul className="mt-4 space-y-2 text-white font-['Euclid Circular B'] text-[16px] leading-[32px]">
-            <li>Home</li>
-            <li>Our Mission</li>
-            <li>Knowledge Hub</li>
-            <li>Resources</li>
-            <li>Get Involved</li>
-            <li>Community Engagement</li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/mission">Our Mission</Link></li>
+            <li><Link href="/knowledge-hub">Knowledge Hub</Link></li>
+            <li><Link href="/faq">Resources</Link></li>
+            <li><Link href="/get-involved">Get Involved</Link></li>
+            <li><Link href="/community">Community Engagement</Link></li>
           </ul>
         </div>
 
@@ -370,8 +370,13 @@ export default function MissionPage() {
             Contact
           </h4>
           <p className="mt-4 text-white font-['Euclid Circular B'] text-[16px] leading-[32px]">
-            Huemanite@Icloud.com <br />
-            +1480-529-6306
+            <a href="mailto:Huemanite@Icloud.com" className="hover:text-white/90">
+              Huemanite@Icloud.com
+            </a>{" "}
+            <br />
+            <a href="tel:+14805296306" className="hover:text-white/90">
+              +1480-529-6306
+            </a>
           </p>
         </div>
       </div>

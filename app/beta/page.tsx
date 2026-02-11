@@ -195,10 +195,10 @@ export default function BlogPage() {
         <ul className="space-y-2 text-sm font-euclid">
           <li><Link href="/">Home</Link></li>
           <li><Link href="/mission">Our Mission</Link></li>
-          <li><Link href="/knowledge">Knowledge Hub</Link></li>
+          <li><Link href="/knowledge-hub">Knowledge Hub</Link></li>
           <li><Link href="/monthly-highlights">Monthly Highlights</Link></li>
-          <li><Link href="/involved">Get Involved</Link></li>
-          <li><Link href="/engagement">Community Engagement</Link></li>
+          <li><Link href="/get-involved">Get Involved</Link></li>
+          <li><Link href="/community">Community Engagement</Link></li>
         </ul>
       </div>
 
@@ -207,8 +207,16 @@ export default function BlogPage() {
         <h3 className="text-[#5ACCB6] font-semibold mb-4 uppercase text-sm tracking-wide">
           Contact
         </h3>
-        <p className="text-sm">Huemanite@Icloud.com</p>
-        <p className="text-sm mt-1">+1 480-529-6306</p>
+        <p className="text-sm">
+          <a href="mailto:Huemanite@Icloud.com" className="hover:text-white/90">
+            Huemanite@Icloud.com
+          </a>
+        </p>
+        <p className="text-sm mt-1">
+          <a href="tel:+14805296306" className="hover:text-white/90">
+            +1 480-529-6306
+          </a>
+        </p>
       </div>
     </div>
   </div>

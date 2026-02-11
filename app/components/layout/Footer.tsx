@@ -26,9 +26,9 @@ export default function Footer() {
         <ul className="space-y-1.5 text-[13px] leading-6 text-white/80">
           <li><Link href="/">Home</Link></li>
           <li><Link href="/mission">Our Mission</Link></li>
-          <li><Link href="/knowledge">Knowledge Hub</Link></li>
+          <li><Link href="/knowledge-hub">Knowledge Hub</Link></li>
           <li><Link href="/monthly-highlights">Monthly Highlights</Link></li>
-          <li><Link href="/involved">Get Involved</Link></li>
+          <li><Link href="/get-involved">Get Involved</Link></li>
           <li><Link href="/community">Community Engagement</Link></li>
         </ul>
       </div>

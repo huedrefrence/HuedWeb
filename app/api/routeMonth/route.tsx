@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxOOoFMxDA-HSLJylzw7cgH7IBKCJcLK7pUmpZwLFUhSwpwZe0o6qpDDGl11gPN4G3E/exec";
+/*  */const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxOOoFMxDA-HSLJylzw7cgH7IBKCJcLK7pUmpZwLFUhSwpwZe0o6qpDDGl11gPN4G3E/exec";
 export async function POST(req: NextRequest) {
   try {
     const data = await req.json();

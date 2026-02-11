@@ -279,7 +279,7 @@ export default function ResourcesPage() {
             </h1>
 
             <Link
-              href="/contact"
+              href="#faq-footer"
               className="mt-6 inline-flex items-center justify-center rounded-[10px] bg-[#111] px-5 py-3 text-white font-['Euclid Circular B'] text-[15px]"
             >
               Contact Support
@@ -356,7 +356,7 @@ export default function ResourcesPage() {
       </section>
 
 
-      <footer className="bg-[#1A1A1A]">
+      <footer id="faq-footer" className="bg-[#1A1A1A]">
         <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-12">
             {/* Brand */}
@@ -393,8 +393,16 @@ export default function ResourcesPage() {
                 Contact
               </h4>
               <div className="text-white font-['Euclid Circular B'] text-[15px] leading-[28px]">
-                <p>Huemanite@Icloud.com</p>
-                <p>+1480-529-6306</p>
+                <p>
+                  <a href="mailto:Huemanite@Icloud.com" className="hover:opacity-80">
+                    Huemanite@Icloud.com
+                  </a>
+                </p>
+                <p>
+                  <a href="tel:+14805296306" className="hover:opacity-80">
+                    +1480-529-6306
+                  </a>
+                </p>
               </div>
             </div>
             </div>
