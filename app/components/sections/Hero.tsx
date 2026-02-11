@@ -90,7 +90,7 @@ export default function Hero() {
     
           <div className="mt-6 flex justify-center">
             <Link
-              href="https://app.quizpro.tech/"
+              href="https://app.quizpro.tech/preview/c2a458ca-ea7d-49d5-9e2d-b392f7495243"
               className="inline-block rounded-full bg-[#0F172A] px-6 py-3 text-sm font-semibold text-white hover:bg-[#1F2937]
                          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0E6FFF] focus-visible:ring-offset-2"
             >

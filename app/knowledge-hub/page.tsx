@@ -172,8 +172,8 @@ function cleanExcerpt({
 
 function normalizeCreator(c?: string) {
   const v = (c || "").trim();
-  if (!v) return "Unknown";
-  if (v.toLowerCase() === "reel") return "Unknown";
+  if (!v) return "Hued Legacy Data";
+  if (v.toLowerCase() === "reel") return "Hued Legacy Data";
   return v;
 }
 
@@ -262,8 +262,6 @@ const TAG_COLORS: Record<string, string> = {
   "Cultural Awareness": "#FF5656",
   "Style Principles": "#F27B5D",
 };
-
-const CREATORS = ["Style Guru", "Fashion Forward", "TrendSetter", "Ecochic", "Upcycle Master"];
 
 // ---------------- Header ----------------
 function Header() {
@@ -611,24 +609,16 @@ track({
 function FilterSidebar({
   selectedType,
   setSelectedType,
-  selectedCreators,
-  setSelectedCreators,
   dateRange,
   setDateRange,
   clearAll,
 }: {
   selectedType: ContentType | null;
   setSelectedType: React.Dispatch<React.SetStateAction<ContentType | null>>;
-  selectedCreators: string[];
-  setSelectedCreators: React.Dispatch<React.SetStateAction<string[]>>;
   dateRange: string;
   setDateRange: React.Dispatch<React.SetStateAction<string>>;
   clearAll: () => void;
 }) {
-  const toggle = (list: string[], setList: React.Dispatch<React.SetStateAction<string[]>>, value: string) => {
-    setList(list.includes(value) ? list.filter((x) => x !== value) : [...list, value]);
-  };
-
   return (
     <div className="rounded-2xl border border-black/10 bg-[#FDF9F0] p-5 h-fit">
       <div className="flex items-center justify-between mb-4">
@@ -647,19 +637,6 @@ function FilterSidebar({
                 label={label}
                 checked={selectedType === value}
                 onChange={() => setSelectedType(selectedType === value ? null : value)}
-              />
-            </div>
-          ))}
-        </div>
-
-        <div>
-          <h4 className="mb-2 font-medium">Creators</h4>
-          {CREATORS.map((c) => (
-            <div key={c} className="mb-2">
-              <Checkbox
-                label={c}
-                checked={selectedCreators.includes(c)}
-                onChange={() => toggle(selectedCreators, setSelectedCreators, c)}
               />
             </div>
           ))}
@@ -691,7 +668,6 @@ export default function KnowledgeHubPage() {
   // ✅ SINGLE type selection
   const [selectedType, setSelectedType] = useState<ContentType | null>(null);
 
-  const [selectedCreators, setSelectedCreators] = useState<string[]>([]);
   const [dateRange, setDateRange] = useState<string>("Anytime");
   const [sortBy, setSortBy] = useState<"relevance" | "date">("relevance");
 
@@ -702,7 +678,6 @@ export default function KnowledgeHubPage() {
 
   const clearAll = useCallback(() => {
     setSelectedType(null);
-    setSelectedCreators([]);
     setDateRange("Anytime");
   }, []);
 
@@ -875,8 +850,6 @@ export default function KnowledgeHubPage() {
       const d = new Date(it.dateISO);
 
       const typeOk = selectedType === null || it.type === selectedType;
-      const creatorOk = !selectedCreators.length || selectedCreators.includes(it.creator);
-
       const tagOk = activeTag
         ? it.tags.includes(activeTag) ||
           it.title.toLowerCase().includes(activeTag.toLowerCase()) ||
@@ -886,7 +859,7 @@ export default function KnowledgeHubPage() {
       const hay = (it.title + " " + it.creator + " " + it.tags.join(" ") + " " + it.excerpt).toLowerCase();
       const qOk = !q || hay.includes(q);
 
-      return typeOk && creatorOk && withinRange(d) && tagOk && qOk;
+      return typeOk && withinRange(d) && tagOk && qOk;
     });
 
     if (sortBy === "date") {
@@ -894,7 +867,7 @@ export default function KnowledgeHubPage() {
     }
 
     return res;
-  }, [items, query, activeTag, selectedType, selectedCreators, dateRange, sortBy]);
+  }, [items, query, activeTag, selectedType, dateRange, sortBy]);
 
   const recommended = useMemo(() => {
     if (!items.length) return [];
@@ -929,8 +902,6 @@ export default function KnowledgeHubPage() {
             <FilterSidebar
               selectedType={selectedType}
               setSelectedType={setSelectedType}
-              selectedCreators={selectedCreators}
-              setSelectedCreators={setSelectedCreators}
               dateRange={dateRange}
               setDateRange={setDateRange}
               clearAll={clearAll}
@@ -1037,8 +1008,6 @@ export default function KnowledgeHubPage() {
             <FilterSidebar
               selectedType={selectedType}
               setSelectedType={setSelectedType}
-              selectedCreators={selectedCreators}
-              setSelectedCreators={setSelectedCreators}
               dateRange={dateRange}
               setDateRange={setDateRange}
               clearAll={clearAll}

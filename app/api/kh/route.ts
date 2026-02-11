@@ -63,7 +63,7 @@ function mapRow(row: RawRow) {
   Content_Type: r.Content_Type,
 
   title,
-  creator: r.Creator || r.Author || "Unknown",
+    creator: r.Creator || r.Author || "Hued Legacy Data",
   creator_title: r.creator_title || undefined,
   date: r.Date || r.date || new Date().toISOString(),
   tags: [category].filter(Boolean),

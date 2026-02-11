@@ -1,9 +1,32 @@
 // app/mission/page.tsx
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Footer from "../components/layout/Footer";
 
+const INITIAL_COUNTDOWN_SECONDS = (((200 * 24 + 4) * 60 + 11) * 60) + 45;
+
 export default function CommunityPage() {
+  const [targetEpoch] = useState<number>(() => Date.now() + INITIAL_COUNTDOWN_SECONDS * 1000);
+  const [nowEpoch, setNowEpoch] = useState<number>(() => Date.now());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNowEpoch(Date.now());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const remainingMs = Math.max(0, targetEpoch - nowEpoch);
+  const totalSeconds = Math.floor(remainingMs / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
   return (
     <main className="bg-white text-[#111]">
       {/* Header */}
@@ -46,19 +69,6 @@ export default function CommunityPage() {
       counts. Get early access to the Hued beta.
     </p>
     
-    <form className="flex flex-col items-center gap-3">
-      <input
-        type="email"
-        placeholder="Enter your email"
-        className="w-full max-w-[320px] rounded-[10px] px-4 py-3 bg-white text-black placeholder:text-gray-600 focus:outline-none"
-      />
-      <button
-        type="submit"
-        className="w-full max-w-[320px] bg-black text-white rounded-[10px] px-6 py-3 text-sm font-medium hover:bg-gray-800 transition"
-      >
-        Join the Hued Community
-      </button>
-    </form>
   </div>
 </section>
 
@@ -84,7 +94,7 @@ export default function CommunityPage() {
     {/* Days */}
     <div className="flex flex-col items-center justify-center">
       <p className="font-['Euclid Circular B'] font-semibold text-[36px] leading-[44px] text-[#F27A5D]">
-        7
+        {days}
       </p>
       <span className="uppercase text-xs font-medium text-[#111] tracking-wide">
         Days
@@ -94,7 +104,7 @@ export default function CommunityPage() {
     {/* Hours */}
     <div className="flex flex-col items-center justify-center">
       <p className="font-['Euclid Circular B'] font-semibold text-[36px] leading-[44px] text-[#F27A5D]">
-        11
+        {String(hours).padStart(2, "0")}
       </p>
       <span className="uppercase text-xs font-medium text-[#111] tracking-wide">
         Hrs
@@ -104,7 +114,7 @@ export default function CommunityPage() {
     {/* Minutes */}
     <div className="flex flex-col items-center justify-center">
       <p className="font-['Euclid Circular B'] font-semibold text-[36px] leading-[44px] text-[#F27A5D]">
-        39
+        {String(minutes).padStart(2, "0")}
       </p>
       <span className="uppercase text-xs font-medium text-[#111] tracking-wide">
         Mins
@@ -114,7 +124,7 @@ export default function CommunityPage() {
     {/* Seconds */}
     <div className="flex flex-col items-center justify-center">
       <p className="font-['Euclid Circular B'] font-semibold text-[36px] leading-[44px] text-[#F27A5D]">
-        24
+        {String(seconds).padStart(2, "0")}
       </p>
       <span className="uppercase text-xs font-medium text-[#111] tracking-wide">
         Secs

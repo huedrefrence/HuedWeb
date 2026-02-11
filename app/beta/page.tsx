@@ -23,7 +23,7 @@ export default function BlogPage() {
           <li><Link href="/">Home</Link></li>
           <li><Link href="/beta">Hued Beta</Link></li>
           <li>
-            <Link href="/blog" className="text-[#2F80ED] font-medium">
+            <Link href="/knowledge-hub" className="text-[#2F80ED] font-medium">
               Blog
             </Link>
           </li>
@@ -158,9 +158,6 @@ export default function BlogPage() {
 
   {/* Buttons */}
   <div className="mt-8 flex gap-4">
-    <button className="px-6 py-3 rounded-md bg-black text-white font-medium hover:opacity-90">
-      Join Community
-    </button>
     <button className="px-6 py-3 rounded-md border border-black text-black font-medium hover:bg-gray-100">
       Submit Content
     </button>

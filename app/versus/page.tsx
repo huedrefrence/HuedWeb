@@ -174,7 +174,7 @@ export default function VersusPage() {
             </h3>
             <div className="flex justify-center gap-4">
               <Link
-                href="/blog"
+                href="/knowledge-hub"
                 className="bg-black text-white px-6 py-3 rounded-full"
               >
                 Explore HUED Blog
