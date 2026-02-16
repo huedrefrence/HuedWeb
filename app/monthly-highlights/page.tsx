@@ -116,6 +116,8 @@ function IconStar(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export default function MonthlyFeatures() {
+  const showFashionKnowledgeContributors = false;
+
   const [formData, setFormData] = useState({
     name: "",
     category: "",
@@ -213,113 +215,115 @@ export default function MonthlyFeatures() {
             <br />
             HIGHLIGHTS
           </h1>
-          <p className="font-['Euclid Circular B'] text-white font-medium text-[24px] leading-[32px] mt-3 drop-shadow-md">
-            March 2025
-          </p>
+          
         </div>
       </section>
 
-      {/* Heading */}
-      <section className="w-full py-8 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="font-['Euclid Circular B'] text-3xl text-[#111]">
-            Fashion Knowledge Contributors
-          </h2>
-        </div>
-      </section>
-
-      {/* Placards */}
-      <section className="w-full flex justify-center items-start pt-2 pb-12 bg-white">
-        <div className="w-full max-w-6xl px-4 grid md:grid-cols-3 gap-6">
-          {[
-            {
-              name: "Maria Rodriguez",
-              profession: "Sustainable Fashion Advocate",
-              image: "/images/Frame121.png",
-              alt: "Fashion Icon",
-              date: "March 28, 2025",
-              description:
-                "Celebrating innovators who redefine fashion with creativity and sustainability.",
-              tags: ["Sustainable", "Recolution", "Minimalist"],
-            },
-            {
-              name: "Maria Rodriguez",
-              profession: "Sustainable Fashion Advocate",
-              image: "/images/Frame121.png",
-              alt: "Tech Entrepreneur",
-              date: "March 28, 2025",
-              description:
-                "Spotlighting tech leaders who are shaping the future of digital experiences.",
-              tags: ["Sustainable", "Recolution", "Minimalist"],
-            },
-            {
-              name: "Jessica Wang",
-              profession: "Influencer",
-              image: "/images/Frame127.png",
-              alt: "Community Leader",
-              date: "Oct 12, 2025",
-              description:
-                "Highlighting changemakers making meaningful social and cultural impact.",
-              tags: ["Sustainable", "Recolution", "Minimalist"],
-            },
-          ].map((placard, i) => (
-            <div
-              key={i}
-              className="flex flex-col bg-[#FDF8F1] rounded-lg shadow-md overflow-hidden"
-            >
-              <div className="w-full h-50 relative">
-                <Image
-                  src={placard.image}
-                  alt={placard.alt}
-                  fill
-                  className="object-cover w-full rounded-t-lg"
-                />
-              </div>
-
-              <div className="flex items-center justify-between px-3 py-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-sm font-semibold">
-                    {placard.name.charAt(0)}
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-sm font-semibold text-gray-900">
-                      {placard.name}
-                    </span>
-                    <span className="text-xs text-gray-500">
-                      {placard.profession}
-                    </span>
-                  </div>
-                </div>
-                <span className="text-xs text-gray-400">{placard.date}</span>
-              </div>
-
-              <div className="p-3 flex flex-col">
-                <p className="text-sm text-gray-800 mb-2 line-clamp-2">
-                  {placard.description}
-                </p>
-                <div className="flex flex-wrap gap-1 mb-2">
-                  {placard.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-[#E5E3DD] text-gray-800 text-xs px-2 py-1 rounded"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="border-t border-gray-300 my-2" />
-
-                <div className="flex justify-end gap-3 text-gray-500">
-                  <IconComment className="h-5 w-5 hover:text-blue-500 cursor-pointer" />
-                  <IconHeart className="h-5 w-5 hover:text-red-500 cursor-pointer" />
-                  <IconBookmark className="h-5 w-5 hover:text-yellow-500 cursor-pointer" />
-                </div>
-              </div>
+      {showFashionKnowledgeContributors && (
+        <>
+          {/* Heading */}
+          <section className="w-full py-8 bg-white">
+            <div className="max-w-6xl mx-auto px-4">
+              <h2 className="font-['Euclid Circular B'] text-3xl text-[#111]">
+                Fashion Knowledge Contributors
+              </h2>
             </div>
-          ))}
-        </div>
-      </section>
+          </section>
+
+          {/* Placards */}
+          <section className="w-full flex justify-center items-start pt-2 pb-12 bg-white">
+            <div className="w-full max-w-6xl px-4 grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  name: "Maria Rodriguez",
+                  profession: "Sustainable Fashion Advocate",
+                  image: "/images/Frame121.png",
+                  alt: "Fashion Icon",
+                  date: "March 28, 2025",
+                  description:
+                    "Celebrating innovators who redefine fashion with creativity and sustainability.",
+                  tags: ["Sustainable", "Recolution", "Minimalist"],
+                },
+                {
+                  name: "Maria Rodriguez",
+                  profession: "Sustainable Fashion Advocate",
+                  image: "/images/Frame121.png",
+                  alt: "Tech Entrepreneur",
+                  date: "March 28, 2025",
+                  description:
+                    "Spotlighting tech leaders who are shaping the future of digital experiences.",
+                  tags: ["Sustainable", "Recolution", "Minimalist"],
+                },
+                {
+                  name: "Jessica Wang",
+                  profession: "Influencer",
+                  image: "/images/Frame127.png",
+                  alt: "Community Leader",
+                  date: "Oct 12, 2025",
+                  description:
+                    "Highlighting changemakers making meaningful social and cultural impact.",
+                  tags: ["Sustainable", "Recolution", "Minimalist"],
+                },
+              ].map((placard, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col bg-[#FDF8F1] rounded-lg shadow-md overflow-hidden"
+                >
+                  <div className="w-full h-50 relative">
+                    <Image
+                      src={placard.image}
+                      alt={placard.alt}
+                      fill
+                      className="object-cover w-full rounded-t-lg"
+                    />
+                  </div>
+
+                  <div className="flex items-center justify-between px-3 py-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-gray-600 text-sm font-semibold">
+                        {placard.name.charAt(0)}
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm font-semibold text-gray-900">
+                          {placard.name}
+                        </span>
+                        <span className="text-xs text-gray-500">
+                          {placard.profession}
+                        </span>
+                      </div>
+                    </div>
+                    <span className="text-xs text-gray-400">{placard.date}</span>
+                  </div>
+
+                  <div className="p-3 flex flex-col">
+                    <p className="text-sm text-gray-800 mb-2 line-clamp-2">
+                      {placard.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      {placard.tags.map((tag, idx) => (
+                        <span
+                          key={idx}
+                          className="bg-[#E5E3DD] text-gray-800 text-xs px-2 py-1 rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="border-t border-gray-300 my-2" />
+
+                    <div className="flex justify-end gap-3 text-gray-500">
+                      <IconComment className="h-5 w-5 hover:text-blue-500 cursor-pointer" />
+                      <IconHeart className="h-5 w-5 hover:text-red-500 cursor-pointer" />
+                      <IconBookmark className="h-5 w-5 hover:text-yellow-500 cursor-pointer" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
 
       {/* Nomination Form */}
       <section className="w-full flex justify-center items-center py-12 bg-white">

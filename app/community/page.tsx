@@ -6,10 +6,17 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Footer from "../components/layout/Footer";
 
-const INITIAL_COUNTDOWN_SECONDS = (((200 * 24 + 4) * 60 + 11) * 60) + 45;
+const DEFAULT_BETA_LAUNCH_AT = "2026-09-01T04:11:45Z";
+
+function getTargetEpoch(): number {
+  const configured = process.env.NEXT_PUBLIC_BETA_LAUNCH_AT;
+  const parsedConfigured = configured ? Date.parse(configured) : NaN;
+  if (!Number.isNaN(parsedConfigured)) return parsedConfigured;
+  return Date.parse(DEFAULT_BETA_LAUNCH_AT);
+}
 
 export default function CommunityPage() {
-  const [targetEpoch] = useState<number>(() => Date.now() + INITIAL_COUNTDOWN_SECONDS * 1000);
+  const [targetEpoch] = useState<number>(() => getTargetEpoch());
   const [nowEpoch, setNowEpoch] = useState<number>(() => Date.now());
 
   useEffect(() => {
@@ -202,16 +209,13 @@ export default function CommunityPage() {
 
     {/* Social Icons */}
     <div className="flex justify-center gap-4">
-      <Link href="https://instagram.com" target="_blank">
+      <Link href="https://www.instagram.com/huedinfo?igsh=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer">
         <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} />
       </Link>
-      <Link href="https://twitter.com" target="_blank">
-        <Image src="/icons/twitter.svg" alt="Twitter" width={24} height={24} />
-      </Link>
-      <Link href="https://facebook.com" target="_blank">
+      <Link href="https://www.facebook.com/profile.php?id=61553540669853" target="_blank" rel="noopener noreferrer">
         <Image src="/icons/facebook.svg" alt="Facebook" width={24} height={24} />
       </Link>
-      <Link href="https://google.com" target="_blank">
+      <Link href="https://www.google.com/search?q=hued+info&rlz=1CDGOYI_enUS756US756&oq=hued+&gs_lcrp=EgZjaHJvbWUqBggDEEUYOzIGCAAQRRg5MgYIARBFGDwyBggCEEUYPDIGCAMQRRg7MgYIBBBFGDsyCAgFEEUYJxg7MgYIBhAjGCcyDAgHEAAYQxiABBiKBTIMCAgQABgUGIcCGIAEMgwICRAAGEMYgAQYigXSAQgzODM0ajBqNKgCArACAeIDBBgBIF8&hl=fr&sourceid=chrome-mobile&ie=UTF-8" target="_blank" rel="noopener noreferrer">
         <Image src="/icons/google.svg" alt="Google" width={24} height={24} />
       </Link>
     </div>

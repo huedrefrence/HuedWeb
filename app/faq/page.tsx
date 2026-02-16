@@ -367,10 +367,7 @@ export default function ResourcesPage() {
                   Hued
                 </span>
               </div>
-              <p className="mt-4 text-white/90 font-['Euclid Circular B'] text-[14px]">
-                “Inspiring Fashion Knowledge”
-              </p>
-            </div>
+              </div>
             <div className="flex flex-col md:flex-row md:gap-16 lg:gap-24 text-right md:text-left">
             {/* Quick links */}
             <div>
@@ -412,3 +409,4 @@ export default function ResourcesPage() {
     </main>
   );
 }
+

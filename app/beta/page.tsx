@@ -3,6 +3,17 @@ import Link from "next/link";
 import React from "react";
 
 export default function BlogPage() {
+  const coverCategories = [
+    { src: "/images/Frame1.png", tag: "Assessing Fashion Needs" },
+    { src: "/images/Frame2.png", tag: "Sourcing Specific Pieces" },
+    { src: "/images/Frame3.png", tag: "Cultural Awareness" },
+    { src: "/images/Frame4.png", tag: "Understanding Sustainable Fashion" },
+    { src: "/images/Frame5.png", tag: "Understanding Fashion Basics" },
+    { src: "/images/Frame6.png", tag: "Body Positivity" },
+    { src: "/images/Frame7.png", tag: "Style Principles" },
+    { src: "/images/Frame8.png", tag: "Wardrobe Management" },
+    { src: "/images/Frame9.png", tag: "Occasion and Context" },
+  ];
  
   return (
     <>
@@ -121,25 +132,21 @@ export default function BlogPage() {
 
     {/* Adjusted grid spacing */}
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 mx-auto max-w-fit">
-  {[
-    "/images/Frame1.png",
-    "/images/Frame2.png",
-    "/images/Frame3.png",
-    "/images/Frame4.png",
-    "/images/Frame5.png",
-    "/images/Frame6.png",
-    "/images/Frame7.png",
-    "/images/Frame8.png",
-    "/images/Frame9.png",
-  ].map((src, idx) => (
-    <Image
-      key={idx}
-      src={src}
-      alt={`Square ${idx + 1}`}
-      width={220}
-      height={220}
-      className="object-contain"
-    />
+  {coverCategories.map((item, idx) => (
+    <Link
+      key={item.tag}
+      href={`/knowledge-hub?tag=${encodeURIComponent(item.tag)}`}
+      aria-label={`Open ${item.tag} in Knowledge Hub`}
+      className="block"
+    >
+      <Image
+        src={item.src}
+        alt={item.tag}
+        width={220}
+        height={220}
+        className="object-contain"
+      />
+    </Link>
   ))}
 </div>
 
@@ -159,7 +166,7 @@ export default function BlogPage() {
   {/* Buttons */}
   <div className="mt-8 flex gap-4">
     <button className="px-6 py-3 rounded-md border border-black text-black font-medium hover:bg-gray-100">
-      Submit Content
+      Submit Content : Coming soon
     </button>
   </div>
 </section>
@@ -180,10 +187,7 @@ export default function BlogPage() {
         />
         <span className="text-xl font-semibold">Hued</span>
       </div>
-      <p className="text-sm mt-2 text-gray-300">
-        “Inspiring Fashion Knowledge”
-      </p>
-    </div>
+      </div>
 
     {/* Right side links */}
     <div className="flex gap-16 md:gap-24 ml-auto">
@@ -228,3 +232,4 @@ export default function BlogPage() {
 
   );
 }
+

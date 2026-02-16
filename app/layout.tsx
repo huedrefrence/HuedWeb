@@ -5,6 +5,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Hued – Elevating Fashion Knowledge",
   description: "Fashion community, luminaries, curated content, and quizzes.",
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

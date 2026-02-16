@@ -30,7 +30,7 @@ export default function VersusPage() {
             <ul className="flex items-center gap-8 text-sm text-[#111827] font-[Euclid Circular B]">
               <li><Link href="/">Home</Link></li>
               <li><Link href="/beta">Hued Beta</Link></li>
-              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/beta">Blog</Link></li>
               <li>
                 <Link href="/versus" className="text-[#2F80ED] font-medium">
                   Versus

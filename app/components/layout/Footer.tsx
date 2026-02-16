@@ -11,10 +11,7 @@ export default function Footer() {
         <Image src="/images/logo.png" alt="Hued logo" width={40} height={40} priority />
         <span className="text-white font-semibold text-lg">Hued</span>
       </div>
-      <p className="text-[13px] leading-6 text-white/70">
-        “Inspiring Fashion Knowledge”
-      </p>
-    </div>
+      </div>
 
     {/* Right group: Quick Links + Contact */}
     <div className="flex flex-col md:flex-row gap-16 md:gap-24">
@@ -58,3 +55,4 @@ export default function Footer() {
 
   );
 }
+

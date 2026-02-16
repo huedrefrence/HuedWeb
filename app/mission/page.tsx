@@ -36,12 +36,12 @@ export default function MissionPage() {
   <div className="mx-auto w-full max-w-[1440px] px-[clamp(16px,4vw,32px)]">
     <div className="relative h-[calc(100svh-var(--header-h))] rounded-[42px] bg-[#FDF8F1] overflow-hidden">
       <div className="absolute left-1/2 -translate-x-1/2 top-[clamp(16px,2.4vw,28px)] w-[92%] text-center">
-        <p className="text-[13px] sm:text-sm text-black mb-2">Our mission</p>
+        <p className="text-[13px] sm:text-sm text-black mb-2 text-bold">Our Mission</p>
         <h1 className="font-['Euclid Circular B'] font-semibold tracking-[-0.25px]
                        text-[clamp(28px,4.2vw,57px)]
                        leading-[clamp(34px,5vw,64px)] text-black">
-          Elevating the
-          <br className="hidden sm:block" /> knowledge of fashion
+          Elevation
+          <br className="hidden sm:block" /> Fashion Knowledge
         </h1>
       </div>
 
@@ -143,12 +143,16 @@ export default function MissionPage() {
 
           {/* paragraph 2 (exact breaks) */}
           <p>
-            <span className="block">We believe that fashion is more</span>
-            <span className="block">than just style-it’s a powerful form</span>
-            <span className="block">peer-to-peer exchange of insights,</span>
-            <span className="block">of self-expression, culture, and</span>
-            <span className="block">innovation.</span>
-          </p>
+  <span className="block italic">
+    We believe that fashion is more
+  </span>
+
+  <span className="block">
+    <em>than just style.</em> Fashion is a powerful form peer-to-peer exchange of 
+  </span>
+  <span className="block">insights, self-expression, culture and</span>
+  <span className="block">innovation.</span>
+</p>
         </div>
       </div>
     </div>
@@ -344,10 +348,7 @@ export default function MissionPage() {
             Hued
           </span>
         </div>
-        <p className="text-white/90 font-['Euclid Circular B'] text-[14px]">
-          “Inspiring Fashion Knowledge”
-        </p>
-      </div>
+        </div>
 
       {/* Right: Quick Links + Contact */}
       <div className="flex flex-col md:flex-row justify-end gap-20">
@@ -390,3 +391,4 @@ export default function MissionPage() {
     </main>
   );
 }
+

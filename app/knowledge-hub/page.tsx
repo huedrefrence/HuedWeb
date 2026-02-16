@@ -4,7 +4,7 @@ import React, { useMemo, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ensureUserId, ensureSessionId, endSessionBeacon, trackBeacon, track } from "./khTracking.client";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 // ---------------- ICONS ----------------
 function SearchIcon() {
@@ -657,6 +657,7 @@ function FilterSidebar({
 
 // ---------------- Page ----------------
 export default function KnowledgeHubPage() {
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
@@ -675,6 +676,15 @@ export default function KnowledgeHubPage() {
   const [rating, setRating] = useState<number>(4);
   const [loading, setLoading] = useState<boolean>(true);
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const urlTag = searchParams.get("tag");
+    if (!urlTag) return;
+
+    const normalized = urlTag.trim().toLowerCase();
+    const matchedTag = TOPIC_TAGS.find((tag) => tag.toLowerCase() === normalized);
+    if (matchedTag) setActiveTag(matchedTag);
+  }, [searchParams]);
 
   const clearAll = useCallback(() => {
     setSelectedType(null);
@@ -1024,8 +1034,7 @@ export default function KnowledgeHubPage() {
                 <Image src="/images/logo.png" alt="Hued" width={36} height={36} priority />
                 <span className="text-[28px] font-semibold leading-none">Hued</span>
               </div>
-              <p className="mt-6 text-[14px] text-white/80">“Inspiring Fashion Knowledge”</p>
-            </div>
+              </div>
 
             <div className="flex flex-col sm:flex-row gap-16">
               <div>
@@ -1091,3 +1100,4 @@ export default function KnowledgeHubPage() {
     </div>
   );
 }
+
