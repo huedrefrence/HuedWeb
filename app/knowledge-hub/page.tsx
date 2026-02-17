@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState, useEffect, useCallback } from "react";
+import React, { Suspense, useMemo, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ensureUserId, ensureSessionId, endSessionBeacon, trackBeacon, track } from "./khTracking.client";
@@ -656,7 +656,7 @@ function FilterSidebar({
 }
 
 // ---------------- Page ----------------
-export default function KnowledgeHubPage() {
+function KnowledgeHubInner() {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const [activeTag, setActiveTag] = useState<string | null>(null);
@@ -1098,6 +1098,13 @@ export default function KnowledgeHubPage() {
         </div>
       </footer>
     </div>
+  );
+}
+export default function KnowledgeHubPage() {
+  return (
+    <Suspense fallback={null}>
+      <KnowledgeHubInner />
+    </Suspense>
   );
 }
 
