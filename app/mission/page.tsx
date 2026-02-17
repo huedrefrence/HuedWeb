@@ -40,7 +40,7 @@ export default function MissionPage() {
         <h1 className="font-['Euclid Circular B'] font-semibold tracking-[-0.25px]
                        text-[clamp(28px,4.2vw,57px)]
                        leading-[clamp(34px,5vw,64px)] text-black">
-          Elevation
+          Elevating
           <br className="hidden sm:block" /> Fashion Knowledge
         </h1>
       </div>
