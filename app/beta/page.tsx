@@ -19,7 +19,9 @@ export default function BlogPage() {
     <>
     <section className="relative isolate overflow-hidden bg-gradient-to-b from-white via-white to-[#FFF6EF] min-h-screen flex flex-col items-center justify-center">
       {/* HEADER */}
+      
       <div className="absolute top-6 left-6 flex items-center gap-2">
+        <a href="http://localhost:3001" className="flex items-center gap-2">
         <Image
           src="/images/logo.png"
           alt="Hued"
@@ -27,6 +29,7 @@ export default function BlogPage() {
           height={36}
           priority
         />
+      </a>  
       </div>
 
       <nav className="absolute top-6 right-6 hidden md:block">
