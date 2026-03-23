@@ -21,7 +21,7 @@ export default function BlogPage() {
       {/* HEADER */}
       
       <div className="absolute top-6 left-6 flex items-center gap-2">
-        <a href="http://localhost:3001" className="flex items-center gap-2">
+        <a href={process.env.NEXT_PUBLIC_B2B_URL} className="flex items-center gap-2">
         <Image
           src="/images/logo.png"
           alt="Hued"
